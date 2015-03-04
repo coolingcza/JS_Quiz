@@ -42,8 +42,11 @@ for (var q in question_obj) {
   full_answer_string = answer_strings.join("\n");
  
   var user_answer = prompt(q + "?\n" + full_answer_string);
-
-  points += question_obj[q][user_answer];
+  
+  if (typeof question_obj[q][user_answer] === "number") {
+    points += question_obj[q][user_answer];
+  }
+    
 
 }
 
