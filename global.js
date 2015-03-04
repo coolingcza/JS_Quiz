@@ -1,4 +1,5 @@
-var questions = {
+
+var question_obj = {
   "Which spice is extremely poisonous if injected intraveniously?": {
                    "nutmeg": 1,
                    "cardamon": 0,
@@ -29,3 +30,22 @@ var questions = {
                    "100,000": 0,
                    "10,000": 0 }
 };           
+
+
+var points = 0
+
+for (var q in question_obj) {
+  var answer_strings = []
+  for (var a in question_obj[q]) {
+    answer_strings.push(a);
+  } 
+  full_answer_string = answer_strings.join("\n");
+ 
+  var user_answer = prompt(q + "?\n" + full_answer_string)
+
+  points += question_obj[q][user_answer]
+
+}
+
+console.log(points)
+
