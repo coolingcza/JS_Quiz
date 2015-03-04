@@ -41,11 +41,12 @@ for (var q in question_obj) {
   } 
   full_answer_string = answer_strings.join("\n");
  
-  var user_answer = prompt(q + "?\n" + full_answer_string)
+  var user_answer = prompt(q + "?\n" + full_answer_string);
 
-  points += question_obj[q][user_answer]
+  points += question_obj[q][user_answer];
 
 }
 
-console.log(points)
+console.log(parseInt(points));
+alert("You got " + points + " questions right!\n" + (parseInt(points)*20) + "%");
 
